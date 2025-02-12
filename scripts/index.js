@@ -91,7 +91,7 @@ window.onload = function initform() {
   sample.className = "sample";
   sample.alt = "This is a sample image.";
   sample.id = "sample";
-  sample.src = "/firstspringbootapi/images/sample.png";
+  sample.src = "/images/sample.png";
 
   document.getElementById("charts").appendChild(sample);
 
