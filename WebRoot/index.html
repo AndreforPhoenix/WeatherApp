@@ -1,0 +1,159 @@
+<!--
+Author: Andre Williams
+Begin Date: 8/3/2024 7a
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="cache-control" content="no-store" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="pragma" content="no-cache" />
+
+    <title>Data Tool by Andre Williams</title>
+    <link rel="stylesheet" href="\firstspringbootapi\styles\index.css" />
+  </head>
+  <body>
+    <div id="outer" class="outer">
+      <label for="progress">Downloading progress:</label>
+      <progress id="progress" value="0" max="100">77%</progress>
+    </div>
+
+    <div id="container" class="container">
+      <header class="header">
+        <img src="\firstspringbootapi\images\AZMet_1.png" />
+      </header>
+
+      <div class="middle">
+
+          <div class="data-area">
+            <div class="charts" id="charts"></div>
+          </div>
+      
+        <div class="filter-right">
+          <label for="response">Choose a variable:</label>
+          <select id="response"></select>
+
+          <label for="year">Filter for year:</label>
+          <select id="year" multiple size="auto"></select>
+
+          <label for="station">Filter for Weather station:</label>
+          <select id="station" multiple size="auto"></select>
+
+          <label for="month">Filter for Month:</label>
+          <select id="month" multiple size="auto"></select>
+
+          <label for="by">Analyze by:</label>
+          <select id="by">
+            <option value="0">year</option>
+            <option value="1">month</option>
+            <option value="2">station</option>
+          </select>
+
+          <button type="button" class="getFileName" id="getFileName">
+            Analyze Data
+          </button>
+        </div>
+      </div>
+
+      <div class="middle-right" id="middle-right"></div>
+
+      <footer class="footer">
+        <h3>2024 - Data by Andre - All rights reserved.</h3>
+      </footer>
+    </div>
+
+    <script type="module" src="\firstspringbootapi\scripts\index.js">
+      /*
+            async function getData() {
+              const results = await fetch("http://localhost:8080/data", {
+                cache: "no-store",
+              }).then((data) => data.json());
+
+              for (const result of results) {
+                console.log(result);
+              }
+            }
+
+            async function getResponse(ele) {
+              const r = await fetch("http://localhost:8080/response", {
+                cache: "no-store",
+              }).then((data) => data.json());
+              var select1 = document.getElementById(ele);
+
+              for (const s of r) {
+                if ( !(s == "year" || s == "station" || s == "dayofyear" )){
+                var option1 = document.createElement("OPTION");
+                option1.text = s;
+                option1.value = s.value;
+                select1.appendChild(option1);
+                }
+              }
+            }
+
+            async function getSelector(ele) {
+              const r = await fetch("http://localhost:8080/sel", {
+                cache: "no-store",
+              }).then((data) => data.json());
+              var select1 = document.getElementById(ele);
+
+              for (const s of r) {
+                var option1 = document.createElement("OPTION");
+                option1.text = s;
+                option1.value = s.value;
+                select1.appendChild(option1);
+              }
+            }
+
+            async function updateFilter(sqlString) {
+              const myData = { sqlString };
+              const result = await fetch("http://localhost:8080/update", {
+                cache: "no-store",
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(myData),
+              })
+                .then((data) => data.json())
+                .then((data) => data)
+                .catch();
+
+              console.log(result);
+            }
+
+            function initform() {
+              setTimeout(() => {
+                init("SELECT DISTINCT station FROM azmetdaily", "station");
+              }, 0);
+              setTimeout(() => {
+                init("SELECT DISTINCT monthname FROM azmetdaily", "dayOfYear");
+              }, 5000);
+              setTimeout(() => {
+                init("SELECT DISTINCT year FROM azmetdaily", "year");
+              }, 10000);
+              setTimeout(() => {
+                init("SHOW COLUMNS FROM azmetdaily", "response");
+              }, 15000);
+            }
+
+            function init(a, b) {
+              setTimeout(() => {
+                updateFilter(a);
+              }, 1000);
+              if (b != "response") {
+                setTimeout(() => {
+                  getSelector(b);
+                }, 5000);
+              } else {
+                setTimeout(() => {
+                  getResponse(b);
+                }, 5000);
+              }
+            }
+      */
+    </script>
+  </body>
+</html>

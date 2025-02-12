@@ -1,0 +1,131 @@
+/*
+Author: Andre Williams
+Begin Date: 8/3/2024 7a
+*/
+
+
+
+select {
+width: 100%;
+height:auto;
+text-align: center;
+margin-bottom: 10px;
+}
+
+.container {
+  visibility: visible;
+  margin: 3px;
+  display: flex;
+  flex-direction: column;
+  border: 1px dashed;
+  /*height:720px; */
+  
+}
+
+.header,
+.footer {
+  padding: 3px;
+  margin: 3px;
+  flex: 1;
+  border: 1px solid;
+}
+
+.middle {
+  padding: 3px;
+  margin: 3px;
+  display: flex;
+  flex-direction: row;
+  flex: 8;
+  border: 1px solid;
+}
+
+.middle-left,
+.middle-right {
+  padding: 3px;
+  margin: 3px;
+  flex: 1;
+
+}
+
+.middle-middle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 3px;
+  margin: 3px;
+  flex: 8;
+}
+
+.data-area {
+    flex: 8;
+
+  width: auto;
+}
+
+.instructions,
+.retrieve-data  {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  padding: 3px;
+  margin: 3px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.retrieve-data  {
+  justify-content: right;
+}
+
+canvas {
+ background-color:aliceblue;
+  margin: 10px;
+  border: 3px solid;
+  border-radius: 10px;
+  
+}
+
+.charts {
+  display:flex;
+  flex-direction: column;
+  padding: 3px;
+  margin: 3px;
+  align-items: center;
+ 
+}
+
+.p {
+  padding: 3px;
+}
+
+.hist {
+  display: flex;
+  flex-direction: column;
+}
+
+.histogram {
+  flex: 8;
+}
+.range {
+  flex: 2;
+}
+
+.sample {
+  opacity: 15%;
+}
+
+.filter-right {
+    flex: 3;
+    margin: 3px;
+    }
+
+    button {
+      margin-top: 10px;
+     width:100%;
+    }
+
+#year, #response, #station, #month, #by {
+  background-color: aliceblue;
+  border: 3px solid;
+}
+
+  
