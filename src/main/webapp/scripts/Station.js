@@ -2,7 +2,7 @@ import { updateProgressBar } from "./Update.js";
 import { getStationName} from "./StationName.js";
 
 export async function getStation(station) {
-    const a = await fetch("http://localhost:8080/station", {
+    const a = await fetch("https://azmetapp-cdfqh3f3azapewbf.canadacentral-01.azurewebsites.net/station", {
       mode: "cors",
       cache: "no-store",
       headers: {

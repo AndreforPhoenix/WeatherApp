@@ -2,7 +2,7 @@ import { updateProgressBar } from "./Update.js";
 import { getMonthName } from "./MonthName.js";
 
 export async function getMonth(month) {
-  const z = await fetch("http://localhost:8080/month", {
+  const z = await fetch("https://azmetapp-cdfqh3f3azapewbf.canadacentral-01.azurewebsites.net/month", {
     mode: "cors",
     cache: "no-store",
     headers: {

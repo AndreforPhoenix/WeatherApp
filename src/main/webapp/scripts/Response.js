@@ -2,7 +2,7 @@ import { updateProgressBar } from "./Update.js";
 import { getResponseName } from "./ResponseName.js";
 
 export async function getResponse(response) {
-    const r = await fetch("http://localhost:8080/response", {
+    const r = await fetch("https://azmetapp-cdfqh3f3azapewbf.canadacentral-01.azurewebsites.net/response", {
         mode: "cors", cache: "no-store",
         headers: {
           'Content-Type': 'application/json; charset=UTF-8'

@@ -119,7 +119,7 @@ window.onload = function initform() {
 };
 
 async function getData() {
-  results = await fetch("http://localhost:8080/data", {
+  results = await fetch("https://azmetapp-cdfqh3f3azapewbf.canadacentral-01.azurewebsites.net/data", {
     mode: "cors",
     cache: "no-cache",
     headers: {
