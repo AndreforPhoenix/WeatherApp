@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
  @RestController
 public class MyController {
 
-    DataResults myData;
+ 
     ResponseObject myResponse;
     ResponseSelectors myRespSel;
     ArrayList<Object> data1 = new ArrayList<>();
@@ -33,7 +33,9 @@ public class MyController {
     @RequestMapping("/response")
     public ArrayList<String> getResponse(){
         
-       myData = new DataResults(FirstspringbootapiApplication.RESPONSE);
+       data2.clear();
+
+       DataResults myData = new DataResults(FirstspringbootapiApplication.RESPONSE);
         
         try {
             System.out.println("In endpoint response, trying query... " + FirstspringbootapiApplication.RESPONSE);
@@ -66,7 +68,9 @@ public class MyController {
     @RequestMapping("/data")
     public ArrayList<Object> getData() {
        
-       myData = new DataResults(FirstspringbootapiApplication.DATA);
+        data1.clear();
+
+        DataResults myData = new DataResults(FirstspringbootapiApplication.DATA);
         
         try {
             System.out.println("In endpoint data, trying query... " + FirstspringbootapiApplication.DATA);
@@ -89,8 +93,11 @@ public class MyController {
             }
 
             try {
-            myData.stmt.close();
+                myData.stmt.close();
+              
                 } catch (SQLException e) {}
+
+     
 
         return data1;
     }
@@ -99,7 +106,9 @@ public class MyController {
     @RequestMapping("/year")
     public ArrayList<String> getYear(){
 
-        myData = new DataResults(FirstspringbootapiApplication.YEAR);
+        data2.clear();
+
+        DataResults myData = new DataResults(FirstspringbootapiApplication.YEAR);
          
          try {
             System.out.println("In endpoint year, trying query... " + FirstspringbootapiApplication.YEAR);            
@@ -114,7 +123,9 @@ public class MyController {
              }
 
              try {
+
                 myData.stmt.close();
+            
                     } catch (SQLException e) {}
 
          return data2;
@@ -124,7 +135,9 @@ public class MyController {
     @RequestMapping("/station")
     public ArrayList<String> getStation(){
 
-        myData = new DataResults(FirstspringbootapiApplication.STATION);
+        data2.clear();
+
+        DataResults myData = new DataResults(FirstspringbootapiApplication.STATION);
          
          try {
             System.out.println("In endpoint station, trying query... " + FirstspringbootapiApplication.STATION);            
@@ -139,7 +152,9 @@ public class MyController {
              }
 
              try {
+
                 myData.stmt.close();
+
                     } catch (SQLException e) {}
 
          return data2;
@@ -149,7 +164,9 @@ public class MyController {
     @RequestMapping("/month")
     public ArrayList<String> getMonth(){
 
-        myData = new DataResults(FirstspringbootapiApplication.MONTH);
+        data2.clear();
+        
+        DataResults myData = new DataResults(FirstspringbootapiApplication.MONTH);
          
          try {
             System.out.println("In endpoint month, trying query... " + FirstspringbootapiApplication.MONTH);            
@@ -164,7 +181,9 @@ public class MyController {
              }
 
              try {
+
                 myData.stmt.close();
+
                     } catch (SQLException e) {}
 
          return data2;
