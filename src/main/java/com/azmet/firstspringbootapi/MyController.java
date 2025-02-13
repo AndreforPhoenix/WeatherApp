@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
  @RestController
 public class MyController {
 
- 
+    DataResults myData;
     ResponseObject myResponse;
     ResponseSelectors myRespSel;
     ArrayList<Object> data1 = new ArrayList<>();
@@ -35,7 +35,7 @@ public class MyController {
         
        data2.clear();
 
-       DataResults myData = new DataResults(FirstspringbootapiApplication.RESPONSE);
+       myData = new DataResults(FirstspringbootapiApplication.RESPONSE);
         
         try {
             System.out.println("In endpoint response, trying query... " + FirstspringbootapiApplication.RESPONSE);
@@ -70,7 +70,7 @@ public class MyController {
        
         data1.clear();
 
-        DataResults myData = new DataResults(FirstspringbootapiApplication.DATA);
+        myData = new DataResults(FirstspringbootapiApplication.DATA);
         
         try {
             System.out.println("In endpoint data, trying query... " + FirstspringbootapiApplication.DATA);
@@ -108,7 +108,7 @@ public class MyController {
 
         data2.clear();
 
-        DataResults myData = new DataResults(FirstspringbootapiApplication.YEAR);
+        myData = new DataResults(FirstspringbootapiApplication.YEAR);
          
          try {
             System.out.println("In endpoint year, trying query... " + FirstspringbootapiApplication.YEAR);            
@@ -137,7 +137,7 @@ public class MyController {
 
         data2.clear();
 
-        DataResults myData = new DataResults(FirstspringbootapiApplication.STATION);
+        myData = new DataResults(FirstspringbootapiApplication.STATION);
          
          try {
             System.out.println("In endpoint station, trying query... " + FirstspringbootapiApplication.STATION);            
@@ -165,8 +165,8 @@ public class MyController {
     public ArrayList<String> getMonth(){
 
         data2.clear();
-        
-        DataResults myData = new DataResults(FirstspringbootapiApplication.MONTH);
+
+        myData = new DataResults(FirstspringbootapiApplication.MONTH);
          
          try {
             System.out.println("In endpoint month, trying query... " + FirstspringbootapiApplication.MONTH);            
