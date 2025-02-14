@@ -19,6 +19,7 @@ margin-bottom: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   border: 1px solid;
   /*height:720px; */
   
