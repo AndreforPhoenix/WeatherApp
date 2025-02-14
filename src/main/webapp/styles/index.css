@@ -107,6 +107,14 @@ canvas {
   width: 80%;
 }
 
+body {
+  width: 100vw; /* or any desired width */
+  margin: 0 auto;
+  height: 100vh; /* ensures the body takes full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
     button {
       margin-top: 10px;
