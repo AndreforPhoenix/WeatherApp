@@ -99,22 +99,6 @@ canvas {
   box-shadow: 2px 2px 2px 2px rgb(185, 187, 188);
 }
 
-.p {
-  padding: 3px;
-}
-
-.hist {
-  display: flex;
-  flex-direction: column;
-}
-
-.histogram {
-  flex: 8;
-}
-.range {
-  flex: 2;
-}
-
 .sample {
   opacity: 15%;
   width: 80%;
@@ -130,8 +114,3 @@ h5 {
   flex: 1;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
