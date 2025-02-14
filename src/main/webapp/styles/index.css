@@ -51,6 +51,12 @@ img {
   width: 25%;
   box-shadow: 2px 2px 2px 2px rgb(185, 187, 188);
 }
+
+#linkin {
+  width: 75px;
+  height: 75px;
+
+}
 .charts {
   display:flex;
   flex-direction: column;
@@ -66,6 +72,8 @@ img {
   margin: 3px;
   box-shadow: 2px 2px 2px 2px rgb(185, 187, 188);
   height: 50%;
+  display:flex;
+
   }
 
 canvas {
