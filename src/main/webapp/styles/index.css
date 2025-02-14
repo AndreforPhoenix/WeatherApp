@@ -28,12 +28,12 @@ margin-bottom: 10px;
 .header,
 .footer {
   width: 80%;
-  height: 100px;
+  height: 250px;
   padding: 10px;
   flex: 1;
   box-shadow: 2px 2px 2px 2px rgb(185, 187, 188);
   display: flex;
-  justify-content: center;
+  justify-content: left;
 
 }
 
@@ -112,7 +112,7 @@ canvas {
 }
 
 label {
-  width: 50%;
+  width: 25%;
 }
     #getFileName {
       margin-top: 10px;
