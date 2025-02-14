@@ -68,8 +68,24 @@ canvas {
  background-color:aliceblue;
   margin: 10px;
   border: 1px solid;
-  border-radius: 5px;
+  border-radius: 10px;
   width: 80%;
+}
+
+.p {
+  padding: 3px;
+}
+
+.hist {
+  display: flex;
+  flex-direction: column;
+}
+
+.histogram {
+  flex: 8;
+}
+.range {
+  flex: 2;
 }
 
 .sample {
@@ -77,19 +93,15 @@ canvas {
   width: 80%;
 }
 
-label {
-  width: 75%;
-}
 
     button {
       margin-top: 10px;
-     width:75%;
+     width:100%;
     }
 
 #year, #response, #station, #month, #by {
   background-color: aliceblue;
-  border: 1px solid;
-  width: 75%;
+  border: 3px solid;
 }
 
   
