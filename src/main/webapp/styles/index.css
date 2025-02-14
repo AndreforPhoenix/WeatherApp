@@ -13,10 +13,11 @@ margin-bottom: 10px;
 }
 
 .container {
-  width: 80vw;
+  width: 90vw;
   margin: 3px;
   display: flex;
   flex-direction: column;
+
   /*height:720px; */
   
 }
