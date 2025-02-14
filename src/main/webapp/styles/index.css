@@ -24,11 +24,11 @@ label {
 
 .container {
   visibility: visible;
-  width: 80vw;
+  width: 90vw;
   margin: 3px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
   border: 1px solid;
   /*height:720px; */
   
