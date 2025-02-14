@@ -38,16 +38,17 @@ margin-bottom: 10px;
 }
 
 .middle {
-  width: 100%;
+  width: 80%;
   margin: 3px;
   flex: 8;
   display: flex;
   flex-direction: row;
+  box-shadow: 2px 2px 2px 2px rgb(185, 187, 188);
 }
 
 .data-area {
     flex: 3;
-    box-shadow: 2px 2px 2px 2px rgb(185, 187, 188);
+
 }
 
 img {
@@ -64,7 +65,6 @@ img {
 .charts {
   display:flex;
   flex-direction: column;
-  padding: 3px;
   margin: 3px;
   align-items: center;
 }
@@ -74,8 +74,6 @@ img {
 .filter-right {
   flex: 1;
   margin: 3px;
-  margin-right: 0px;
-  box-shadow: 2px 2px 2px 2px rgb(185, 187, 188);
   display:flex;
   flex-direction: column;
   align-items: center;
@@ -83,9 +81,9 @@ img {
 
 canvas {
  background-color:aliceblue;
-  margin: 10px;
+  margin: 5px;
   border: 1px solid;
-  border-radius: 10px;
+  border-radius: 5px;
   width: 80%;
   box-shadow: 2px 2px 2px 2px rgb(185, 187, 188);
 }
