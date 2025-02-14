@@ -43,7 +43,9 @@ margin-bottom: 10px;
     flex: 3;
   
 }
-
+img {
+  width: 25%;
+}
 .charts {
   display:flex;
   flex-direction: column;
