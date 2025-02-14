@@ -33,6 +33,7 @@ margin-bottom: 10px;
   flex: 1;
   box-shadow: 2px 2px 2px 2px rgb(185, 187, 188);
   display: flex;
+  justify-content: center;
 
 }
 
@@ -47,6 +48,7 @@ margin-bottom: 10px;
 
 .data-area {
     flex: 3;
+    box-shadow: 2px 2px 2px 2px rgb(185, 187, 188);
 }
 
 img {
@@ -54,8 +56,8 @@ img {
 }
 
 #linkin {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
 
   flex: 1;
 
@@ -126,6 +128,7 @@ label {
 
 h3 {
   flex: 1;
-  width: 50%;
+  font-size: 25%;
+  
 }
   
