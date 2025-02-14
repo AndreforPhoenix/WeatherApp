@@ -19,7 +19,7 @@ margin-bottom: 10px;
   display: flex;
   flex-direction: column;
   align-content: center;
-  border-style: solid 1px;
+  border: 1px solid;
   /*height:720px; */
   
 }
