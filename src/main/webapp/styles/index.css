@@ -29,8 +29,6 @@ label {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid;
-  /*height:720px; */
   
 }
 
@@ -112,5 +110,10 @@ canvas {
 
 h5 {
   flex: 1;
+}
+
+button {
+  width: 80%;
+  font-size: 50%;
 }
 
