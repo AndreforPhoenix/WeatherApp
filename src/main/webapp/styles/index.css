@@ -16,11 +16,11 @@ margin-bottom: 10px;
 
 .container {
   visibility: visible;
-  width: 100vw;
+  width: 80vw;
   margin: 3px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
   /*height:720px; */
   
 }
