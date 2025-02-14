@@ -4,9 +4,9 @@ Begin Date: 8/3/2024 7a
 */
 
 
-div {
-  box-shadow: 10px 10px;
-}
+
+  
+
 select {
 width: 100%;
 height:auto;
@@ -31,6 +31,7 @@ margin-bottom: 10px;
   padding: 3px;
   margin: 3px;
   flex: 1;
+  box-shadow: 1px 1px;
 }
 
 .middle {
