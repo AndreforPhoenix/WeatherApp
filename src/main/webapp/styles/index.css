@@ -129,4 +129,8 @@ canvas {
 h5 {
   flex: 1;
 }
-  
+
+body {
+  display: flex;
+  justify-content: center;
+}
