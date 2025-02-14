@@ -31,7 +31,7 @@ margin-bottom: 10px;
   padding: 3px;
   margin: 3px;
   flex: 1;
-  box-shadow: 4px 4px 4px 4px rgb(185, 187, 188);
+  box-shadow: 2px 2px 2px 2px rgb(185, 187, 188);
 }
 
 .middle {
@@ -49,6 +49,7 @@ margin-bottom: 10px;
 
 img {
   width: 25%;
+  box-shadow: 2px 2px 2px 2px rgb(185, 187, 188);
 }
 .charts {
   display:flex;
@@ -63,6 +64,8 @@ img {
 .filter-right {
   flex: 1;
   margin: 3px;
+  box-shadow: 2px 2px 2px 2px rgb(185, 187, 188);
+  height: 50%;
   }
 
 canvas {
@@ -71,6 +74,7 @@ canvas {
   border: 1px solid;
   border-radius: 10px;
   width: 80%;
+  box-shadow: 2px 2px 2px 2px rgb(185, 187, 188);
 }
 
 .p {
