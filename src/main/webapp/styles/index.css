@@ -28,7 +28,7 @@ margin-bottom: 10px;
 .header,
 .footer {
   width: 80%;
-  padding: 3px;
+  padding: 10px;
   margin: 3px;
   flex: 1;
   box-shadow: 2px 2px 2px 2px rgb(185, 187, 188);
@@ -54,8 +54,9 @@ img {
 }
 
 #linkin {
-  width: 75px;
-  height: 75px;
+  width: 50px;
+  height: 50px;
+
   flex: 1;
 
 }
@@ -107,7 +108,9 @@ canvas {
   width: 80%;
 }
 
-
+label {
+  width: 50%;
+}
     button {
       margin-top: 10px;
      width:100%;
@@ -116,6 +119,7 @@ canvas {
 #year, #response, #station, #month, #by {
   background-color: aliceblue;
   border: 3px solid;
+  width: 80%;
 }
 
 h3 {
