@@ -13,6 +13,7 @@ margin-bottom: 10px;
 }
 
 .container {
+  visibility: visible;
   width: 90vw;
   margin: 3px;
   display: flex;
