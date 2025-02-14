@@ -14,7 +14,7 @@ margin-bottom: 10px;
 
 .container {
   visibility: visible;
-  width: 90vw;
+  width: 100vw;
   margin: 3px;
   display: flex;
   flex-direction: column;
@@ -26,7 +26,7 @@ margin-bottom: 10px;
 
 .header,
 .footer {
-  width: 80vw;
+  width: 80%;
   padding: 3px;
   margin: 3px;
   flex: 1;
@@ -34,7 +34,7 @@ margin-bottom: 10px;
 }
 
 .middle {
-  width: 80vw;
+  width: 80%;
   padding: 3px;
   margin: 3px;
   flex: 8;
