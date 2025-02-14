@@ -29,6 +29,7 @@ label {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border: 1px solid;
   /*height:720px; */
   
 }
