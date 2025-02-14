@@ -4,15 +4,22 @@ Begin Date: 8/3/2024 7a
 */
 
 
-
-  
-
 select {
 width: 100%;
 height:auto;
 text-align: center;
 margin-bottom: 10px;
 }
+
+label {
+  width: 100%;
+  font-size: 50%;
+}
+
+    #getFileName {
+     margin-top: 10px;
+     width:50%;
+    }
 
 .container {
   visibility: visible;
@@ -110,14 +117,6 @@ canvas {
   opacity: 15%;
   width: 80%;
 }
-
-label {
-  width: 25%;
-}
-    #getFileName {
-      margin-top: 10px;
-     width:50%;
-    }
 
 #year, #response, #station, #month, #by {
   background-color: aliceblue;
