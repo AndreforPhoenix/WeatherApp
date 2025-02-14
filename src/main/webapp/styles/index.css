@@ -28,8 +28,8 @@ margin-bottom: 10px;
 .header,
 .footer {
   width: 80%;
+  height: 100px;
   padding: 10px;
-  margin: 3px;
   flex: 1;
   box-shadow: 2px 2px 2px 2px rgb(185, 187, 188);
   display: flex;
@@ -39,7 +39,8 @@ margin-bottom: 10px;
 
 .middle {
   width: 80%;
-  margin: 3px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   flex: 8;
   display: flex;
   flex-direction: row;
@@ -63,6 +64,7 @@ img {
 
 }
 .charts {
+  flex: 3;
   display:flex;
   flex-direction: column;
   margin: 3px;
