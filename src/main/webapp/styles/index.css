@@ -40,6 +40,7 @@ label {
   flex: 2;
   box-shadow: 2px 2px 2px 2px rgb(185, 187, 188);
   display: flex;
+  justify-content: right;
   
 }
 
@@ -67,7 +68,7 @@ img {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  
+  border: 2px solid;
 }
 
 #linkin {
