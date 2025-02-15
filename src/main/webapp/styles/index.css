@@ -90,17 +90,18 @@ img {
   flex: 4;
   display:flex;
   flex-direction: column;
-  margin: 3px;
-  border: 1px solid;
+  margin: 10px;
   align-items: center;
+  box-shadow: 2px 2px 2px 2px rgb(185, 187, 188);
 }
 
 .filter-right {
   flex: 1;
-  margin: 3px;
+  margin: 10px;
   display:flex;
   flex-direction: column;
   align-items: top;
+  box-shadow: 2px 2px 2px 2px rgb(185, 187, 188);
   }
 
 canvas {
