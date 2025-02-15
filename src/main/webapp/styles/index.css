@@ -40,8 +40,7 @@ label {
   flex: 2;
   box-shadow: 2px 2px 2px 2px rgb(185, 187, 188);
   display: flex;
-  justify-content: left;
-
+  
 }
 
 .middle {
@@ -93,6 +92,10 @@ canvas {
   border-radius: 5px;
   width: 80%;
   box-shadow: 2px 2px 2px 2px rgb(185, 187, 188);
+}
+
+.disclaimer {
+  flex: 1;
 }
 
 .sample {
