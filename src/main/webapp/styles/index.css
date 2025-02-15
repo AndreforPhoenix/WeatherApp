@@ -63,6 +63,11 @@ img {
   width: 25%;
 }
 
+#profile {
+  width: 60px;
+  height: 60px;
+}
+
 #linkin {
   width: 60px;
   height: 60px;
