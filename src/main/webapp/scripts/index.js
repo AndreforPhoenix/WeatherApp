@@ -83,7 +83,7 @@ document
   });
 
 window.onload = function initform() {
-  document.getElementById("container").style.visibility = "visible";
+  document.getElementById("container").style.visibility = "hidden";
 
   const sample = document.createElement("img");
   sample.width = 1000;
