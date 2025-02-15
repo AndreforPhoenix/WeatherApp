@@ -121,7 +121,6 @@ window.onload = function initform() {
 async function getData() {
   results = await fetch("https://azmetapp-cdfqh3f3azapewbf.canadacentral-01.azurewebsites.net/data", {
     mode: "cors",
-    cache: "no-cache",
     headers: {
       "Content-Type": "application/json; charset=UTF-8",
     },
