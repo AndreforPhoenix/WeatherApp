@@ -78,6 +78,11 @@ img {
   align-items: center;
 }
 
+.filtergroup {
+  display:flex;
+  flex-direction: column;
+}
+
 
 .filter-right {
   flex: 1;
