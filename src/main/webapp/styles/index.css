@@ -52,6 +52,7 @@ label {
   display: flex;
   flex-direction: row;
   box-shadow: 2px 2px 2px 2px rgb(185, 187, 188);
+  align-items: center;
 }
 
 .data-area {
