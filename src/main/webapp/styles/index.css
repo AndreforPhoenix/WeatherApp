@@ -66,6 +66,7 @@ img {
   width: 60px;
   height: 60px;
   flex: 1;
+  border: 1px solid;
 
 }
 .charts {
@@ -96,6 +97,7 @@ canvas {
 
 .disclaimer {
   flex: 1;
+  border: 1px solid;
 }
 
 .sample {
