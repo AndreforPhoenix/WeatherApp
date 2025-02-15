@@ -30,36 +30,30 @@ Begin Date: 8/3/2024 7a
       </header>
 
       <section class="middle">
+
+        <div class="data-area">
+          <div class="charts" id="charts"></div>
+        </div>  
       
-        <div class="filter-right">
-          <div class="filtergroup">
+        <div class="filter-right"> 
           <label for="response">Choose a variable:</label>
           <select id="response"></select>
-        </div>
 
-        <div class="filter-right">
           <label for="year">Filter for year:</label>
           <select id="year" multiple size="auto"></select>
-        </div>
 
-        <div class="filter-right">
           <label for="station">Filter for Weather station:</label>
           <select id="station" multiple size="auto"></select>
-        </div>
 
-        <div class="filter-right">
           <label for="month">Filter for Month:</label>
           <select id="month" multiple size="auto"></select>
-        </div>
-
-        <div class="filter-right">        
+       
           <label for="by">Analyze by:</label>
           <select id="by">
             <option value="0">year</option>
             <option value="1">month</option>
             <option value="2">station</option>
           </select>
-        </div>
 
           <button type="button" class="getFileName" id="getFileName">
             Analyze Data
@@ -67,9 +61,6 @@ Begin Date: 8/3/2024 7a
           
         </div>
 
-        <div class="data-area">
-          <div class="charts" id="charts"></div>
-        </div>        
       </section>
 
       <footer class="footer">
