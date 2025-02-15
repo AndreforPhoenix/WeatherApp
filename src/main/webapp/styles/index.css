@@ -90,7 +90,7 @@ img {
   display:flex;
   flex-direction: column;
   margin: 3px;
-
+  border: 1px solid;
 }
 
 .filter-right {
