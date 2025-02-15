@@ -24,7 +24,7 @@ label {
 
 .container {
   visibility: visible;
-  width: 90vw;
+  width: 100vw;
   margin: 3px;
   display: flex;
   flex-direction: column;
@@ -37,7 +37,7 @@ label {
   width: 80%;
   height: 250px;
   padding: 10px;
-  flex: 1;
+  flex: 2;
   box-shadow: 2px 2px 2px 2px rgb(185, 187, 188);
   display: flex;
   justify-content: left;
@@ -46,9 +46,10 @@ label {
 
 .middle {
   width: 80%;
+  height: auto;
   margin-top: 10px;
   margin-bottom: 10px;
-  flex: 8;
+  flex: 4;
   display: flex;
   flex-direction: row;
   box-shadow: 2px 2px 2px 2px rgb(185, 187, 188);
@@ -56,7 +57,6 @@ label {
 
 .data-area {
     flex: 3;
-
 }
 
 img {
