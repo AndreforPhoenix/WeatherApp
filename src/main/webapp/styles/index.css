@@ -84,6 +84,7 @@ img {
 
 .socialIcons {
   width: 50%;
+  vertical-align: middle;
 }
 .charts {
   flex: 4;
@@ -91,6 +92,7 @@ img {
   flex-direction: column;
   margin: 3px;
   border: 1px solid;
+  align-items: center;
 }
 
 .filter-right {
