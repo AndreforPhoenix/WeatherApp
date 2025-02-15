@@ -62,9 +62,9 @@ label {
   align-items: center;
 }
 
-.data-area {
+.dataarea {
     flex: 3;
-    align-items: top;
+    justify-content: center;
 }
 
 img {
