@@ -67,7 +67,10 @@ img {
   height: 60px;
   flex: 1;
   border: 1px solid;
+}
 
+.socialIcons {
+  width: 50%;
 }
 .charts {
   flex: 4;
@@ -96,7 +99,7 @@ canvas {
 }
 
 .disclaimer {
-  flex: 1;
+  width: 50%;
   border: 1px solid;
 }
 
