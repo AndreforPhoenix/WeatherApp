@@ -64,7 +64,6 @@ label {
 
 .dataarea {
     flex: 3;
-    justify-content: center;
 }
 
 img {
@@ -99,7 +98,6 @@ img {
 .filter-right {
   flex: 1;
   margin: 3px;
-  height: 480px;
   display:flex;
   flex-direction: column;
   align-items: top;
