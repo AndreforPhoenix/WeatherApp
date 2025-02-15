@@ -23,9 +23,8 @@ label {
     }
 
 .container {
-  visibility: visible;
   width: 100vw;
-  margin: 3px;
+ /* margin: 3px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,6 +41,13 @@ label {
   display: flex;
   justify-content: right;
   
+}
+
+.About {
+  width: 80%;
+  padding: 10px;
+  flex: 2;
+  box-shadow: 2px 2px 2px 2px rgb(185, 187, 188);
 }
 
 .middle {
