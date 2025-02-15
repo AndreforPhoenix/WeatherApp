@@ -51,7 +51,7 @@ label {
   margin-bottom: 10px;
   flex: 4;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   box-shadow: 2px 2px 2px 2px rgb(185, 187, 188);
 }
 
@@ -80,11 +80,11 @@ img {
 
 
 .filter-right {
-  flex: 2;
+  flex: 1;
   margin: 3px;
   height: 480px;
   display:flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   }
 
