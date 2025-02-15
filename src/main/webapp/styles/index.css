@@ -80,7 +80,7 @@ img {
 
 
 .filter-right {
-  flex: 1;
+  flex: 2;
   margin: 3px;
   height: 480px;
   display:flex;
