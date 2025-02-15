@@ -98,7 +98,7 @@ canvas {
 }
 
 .sample {
-  opacity: 15%;
+  opacity: 25%;
   width: 80%;
 }
 
@@ -113,7 +113,7 @@ h5 {
 }
 
 button {
-  width: 80%;
-  font-size: 50%;
+  width: 100%;
+  font-size: 75%;
 }
 
