@@ -87,7 +87,7 @@ img {
   height: 480px;
   display:flex;
   flex-direction: column;
-  align-items: center;
+  align-items: top;
   }
 
 canvas {
