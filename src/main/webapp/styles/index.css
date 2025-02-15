@@ -64,6 +64,7 @@ label {
 
 .data-area {
     flex: 3;
+    align-items: top;
 }
 
 img {
