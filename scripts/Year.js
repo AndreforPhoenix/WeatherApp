@@ -3,7 +3,7 @@ import { updateProgressBar } from "./Update.js";
 export async function getYear(year) {
     const t = await fetch("http://localhost:8080/year", {
       mode: "cors",
-      cache: "no-store",
+      cache: "no-cache",
       headers: {
         'Content-Type': 'application/json; charset=UTF-8'
     },

@@ -4,7 +4,7 @@ import { getMonthName } from "./MonthName.js";
 export async function getMonth(month) {
   const z = await fetch("http://localhost:8080/month", {
     mode: "cors",
-    cache: "no-store",
+    cache: "no-cache",
     headers: {
       'Content-Type': 'application/json; charset=UTF-8'
   },

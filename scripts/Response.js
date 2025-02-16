@@ -3,7 +3,7 @@ import { getResponseName } from "./ResponseName.js";
 
 export async function getResponse(response) {
     const r = await fetch("http://localhost:8080/response", {
-        mode: "cors", cache: "no-store",
+        mode: "cors", cache: "no-cache",
         headers: {
           'Content-Type': 'application/json; charset=UTF-8'
       },

@@ -4,7 +4,7 @@ import { getStationName} from "./StationName.js";
 export async function getStation(station) {
     const a = await fetch("http://localhost:8080/station", {
       mode: "cors",
-      cache: "no-store",
+      cache: "no-cache",
       headers: {
         'Content-Type': 'application/json; charset=UTF-8'
     },
