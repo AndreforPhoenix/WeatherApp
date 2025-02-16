@@ -53,9 +53,8 @@ label {
 .Issues {
   width: 80%;
   padding: 10px;
-  height: 50px;
-  overflow-y: scroll;
-  flex: 2;
+  height: 250px;
+  overflow: scroll;
   box-shadow: 2px 2px 2px 2px rgb(185, 187, 188);
 }
 
