@@ -50,6 +50,13 @@ label {
   box-shadow: 2px 2px 2px 2px rgb(185, 187, 188);
 }
 
+.Issues {
+  width: 80%;
+  padding: 10px;
+  flex: 2;
+  box-shadow: 2px 2px 2px 2px rgb(185, 187, 188);
+}
+
 .middle {
   width: 80%;
   height: auto;
