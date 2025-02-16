@@ -32,7 +32,7 @@ Begin Date: 8/3/2024 7a
       </header>
 
       <section class="About">
-        <h1>About Project</h1>
+        <h2>About Project</h2>
         <p>I began developing this data tool as a final project for a software development course
           I took through <a href="https://www.coursecareers.com">Course Careers</a> during the second 
           half of 2024. This application consists of a frontend (HTML & JS), a backend (Java (REST API)), 
@@ -42,7 +42,9 @@ Begin Date: 8/3/2024 7a
         <h2>About Dataset</h2>
         <p>The source of the data that the application uses to generate graphical
             infomation and statistics is produced and managed by the <a href="https://www.azmet.arizona.edu/">
-            The Arizona Meteorological Network (AZMET)</a>. I pull the data from AZMET and migrate it over to the MySQL database. 
+            The Arizona Meteorological Network (AZMET)</a>. The data is manually pulled from AZMET and then 
+            migrated over to the MySQL database on Azure. The database is updated with the most current
+            data every 24-48 hours.  
           </a>
         </p>
         <h2>Directions</h2>
@@ -85,6 +87,14 @@ Begin Date: 8/3/2024 7a
             Analyze Data
           </button>
         </div>
+      </section>
+
+      <section class="Issues">
+        <h2>Application Issues</h2>
+        <p>Problem Statement: When the application downloads, often, the filter options  
+          only partially load if at all.</p>
+        <p>Fix (Short-term): Refreshing the page will likely fix the issue. </p>
+        <p>Fix (Long-term): No long term fix yet</p>
       </section>
 
       <footer class="footer">
