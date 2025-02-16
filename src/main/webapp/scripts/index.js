@@ -103,19 +103,19 @@ window.onload = function initform() {
 
   setTimeout(() => {
     getStation("station");
-  }, 5000);
+  }, 0);
 
   setTimeout(() => {
     getYear("year");
-  }, 10000);
+  }, 0);
 
   setTimeout(() => {
     getResponse("response");
-  }, 15000);
+  },0);
 
   setTimeout(() => {
     getData();
-  }, 20000);
+  }, 0);
 };
 
 async function getData() {
