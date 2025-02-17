@@ -4,6 +4,7 @@ import { getMonthName } from "./MonthName.js";
 export async function getMonth(month) {
   const z = await fetch("https://azmetapp-cdfqh3f3azapewbf.canadacentral-01.azurewebsites.net/month", {
     mode: "cors",
+    cache: "no-cache",
     headers: {
       'Content-Type': 'application/json; charset=UTF-8'
   },
