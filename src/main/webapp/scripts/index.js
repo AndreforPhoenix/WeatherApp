@@ -63,7 +63,7 @@ document
         }
       }
    
-      const filter5 = document.getElementById("by").value;
+      const filter5 = document.getElementById("byCategory").value;
 
     const q = new Supplier(
       results,
@@ -124,6 +124,7 @@ async function getData() {
     cache: "no-cache",
     headers: {
       "Content-Type": "application/json; charset=UTF-8",
+      "Cache-control": "no-cache",
     },
   }).then((data) => data.json());
 
