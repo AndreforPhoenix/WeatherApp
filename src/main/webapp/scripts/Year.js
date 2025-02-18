@@ -3,10 +3,10 @@ import { updateProgressBar } from "./Update.js";
 export async function getYear(year) {
     const t = await fetch("https://azmetapp-cdfqh3f3azapewbf.canadacentral-01.azurewebsites.net/year", {
       mode: "cors",
-      cache: "no-cache",
+      cache: "no-store",
       headers: {
         'Content-Type': 'application/json; charset=utf-8',
-        "Cache-control": "no-cache",
+        "Cache-control": "no-store",
     },
     }).then((data) => data.json());
   
