@@ -128,10 +128,6 @@ async function getData() {
     },
   }).then((data) => data.json());
 
-  for (const result of results) {
-    console.log(result);
-  }
-
   var cur = document.getElementById("progress").value;
   updateProgressBar(cur + 20);
 

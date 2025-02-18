@@ -8,6 +8,9 @@ package com.azmet.firstspringbootapi;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,8 +34,11 @@ public class MyController {
 
     @CrossOrigin
     @RequestMapping("/response")
-    public ArrayList<String> getResponse(){
+    public ResponseEntity<ArrayList<String>> getResponse(){
         
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-type:", "application/json; charset=utf-8");
+
        data2.clear();
 
        myData = new DataResults(FirstspringbootapiApplication.RESPONSE);
@@ -61,7 +67,8 @@ public class MyController {
                 myData.stmt.close();
                     } catch (SQLException e) {}
 
-        return data2;
+        return new ResponseEntity<ArrayList<String>>(data2, headers, HttpStatus.OK);
+
     }
 
     @CrossOrigin
