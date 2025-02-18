@@ -73,8 +73,11 @@ public class MyController {
 
     @CrossOrigin
     @RequestMapping("/data")
-    public ArrayList<Object> getData() {
+    public ResponseEntity<ArrayList<Object>> getData() {
        
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-type:", "application/json; charset=utf-8");
+
         data1.clear();
 
         myData = new DataResults(FirstspringbootapiApplication.DATA);
@@ -106,12 +109,15 @@ public class MyController {
 
      
 
-        return data1;
+        return new ResponseEntity<ArrayList<Object>>(data1 , headers, HttpStatus.OK);
     }
 
     @CrossOrigin
     @RequestMapping("/year")
-    public ArrayList<String> getYear(){
+    public ResponseEntity<ArrayList<String>> getYear(){
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-type:", "application/json; charset=utf-8");
 
         data2.clear();
 
@@ -135,12 +141,15 @@ public class MyController {
             
                     } catch (SQLException e) {}
 
-         return data2;
+         return new ResponseEntity<ArrayList<String>>(data2, headers, HttpStatus.OK);
     } 
 
     @CrossOrigin
     @RequestMapping("/station")
-    public ArrayList<String> getStation(){
+    public ResponseEntity<ArrayList<String>> getStation(){
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-type:", "application/json; charset=utf-8");
 
         data2.clear();
 
@@ -164,12 +173,15 @@ public class MyController {
 
                     } catch (SQLException e) {}
 
-         return data2;
+         return new ResponseEntity<ArrayList<String>>(data2, headers,HttpStatus.OK);
     } 
 
     @CrossOrigin
     @RequestMapping("/month")
-    public ArrayList<String> getMonth(){
+    public ResponseEntity<ArrayList<String>> getMonth(){
+        
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-type:", "application/json; charset=utf-8");
 
         data2.clear();
 
@@ -193,7 +205,7 @@ public class MyController {
 
                     } catch (SQLException e) {}
 
-         return data2;
+         return new ResponseEntity<ArrayList<String>>(data2, headers,HttpStatus.OK);
     } 
     
     
