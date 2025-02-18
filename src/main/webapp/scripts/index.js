@@ -123,7 +123,7 @@ async function getData() {
     mode: "cors",
     cache: "no-cache",
     headers: {
-      "Content-Type": "application/json; charset=UTF-8",
+      "Content-Type": "application/json; charset=utf-8",
       "Cache-control": "no-cache",
     },
   }).then((data) => data.json());
