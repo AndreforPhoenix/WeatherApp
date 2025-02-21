@@ -284,9 +284,7 @@ class Boxplot {
           }
           paint.stroke();
         }
-  
-        var ele = "<div id='check'></div>"
-        document.getElementById("charts").appendChild(ele);
+
         document.getElementById("check").appendChild(canvas);
         document.getElementById("charts").appendChild(canvas2);
       } catch (e) {console.error();
