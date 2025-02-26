@@ -4,10 +4,8 @@ import { getResponseName } from "./ResponseName.js";
 export async function getResponse(response) {
     const r = await fetch("https://azmetapp-cdfqh3f3azapewbf.canadacentral-01.azurewebsites.net/response", {
         mode: "cors",
-        cache: "no-store",
         headers: {
           'Content-Type': 'application/json; charset=utf-8',
-          "Cache-control": "no-store",
       },
     }).then((data) => data.json());
   

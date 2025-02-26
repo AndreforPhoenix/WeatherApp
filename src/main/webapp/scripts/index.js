@@ -16,6 +16,7 @@ import { getResponse } from "./Response.js";
 
 var results = [];
 
+
 document
   .getElementById("getFileName")
   .addEventListener("click", function analyzeData() {
@@ -82,6 +83,7 @@ document
     //const cumm = new Cummulative(q);
   });
 
+
 window.onload = function initform() {
   document.getElementById("container").style.visibility = "hidden";
 
@@ -91,7 +93,7 @@ window.onload = function initform() {
   sample.className = "sample";
   sample.alt = "This is a sample image.";
   sample.id = "sample";
-  sample.src = "/images/sample.png";
+  sample.src = "./images/sample.png";
 
   document.getElementById("charts").appendChild(sample);
 
@@ -118,13 +120,15 @@ window.onload = function initform() {
   }, 0);
 };
 
+function removeChart() {
+  console.log("Remove attempted");
+  }
+
 async function getData() {
   results = await fetch("https://azmetapp-cdfqh3f3azapewbf.canadacentral-01.azurewebsites.net/data", {
     mode: "cors",
-    cache: "no-store",
     headers: {
       "Content-Type": "application/json; charset=utf-8",
-      "Cache-control": "no-store",
     },
   }).then((data) => data.json());
 

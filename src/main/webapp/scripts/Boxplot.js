@@ -285,13 +285,38 @@ class Boxplot {
           paint.stroke();
         }
 
-        document.getElementById("charts").appendChild(canvas);
-        document.getElementById("charts").appendChild(canvas2);
+        
+        const box = document.createElement("div");
+        box.id = "box";
+
+        const boxAll = document.createElement("div");
+        boxAll.id = "boxAll";
+
+        const boxside = document.createElement("div");
+        boxside.id = "boxside";
+
+        const b = document.createElement("button");
+        b.id = "b";
+        b.className = "b";
+        b.addEventListener("click", function removeChart(){
+          console.log("Removing...")
+          document.getElementById("charts").removeChild(boxAll)
+        })
+        b.type = "button";
+        b.textContent = "Remove";
+       
+        document.getElementById("charts").appendChild(boxAll);
+        box.append(canvas);
+        box.append(canvas2);
+        boxAll.append(box);
+        boxAll.append(boxside);
+        boxside.append(b);
+
       } catch (e) {console.error();
       };
-      
-  }
 
+    }
+  
   setGlobalMax(resp) {
     this.gMax = Math.max(...resp);
   }
