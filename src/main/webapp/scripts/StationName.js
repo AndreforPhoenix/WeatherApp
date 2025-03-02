@@ -23,7 +23,10 @@ export function getStationName (b) {
       break;
     case '27':
       sName = "Desert Ridge";
-      break;        
+      break; 
+      case '99':
+      sName = "Skyharbor";
+      break;             
       default:
         break;
   }
