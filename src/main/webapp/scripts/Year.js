@@ -29,6 +29,9 @@ export async function getYear(year) {
       var option2 = document.createElement("OPTION");
       option2.text = it;
       option2.value = it;
+      if (option2.value < 2003) {
+        option2.text = it + " (Sky Harbor only)";
+      }
       if (option2.value > 1979) {
         select2.appendChild(option2);
         } else {}

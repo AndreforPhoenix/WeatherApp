@@ -50,7 +50,7 @@ label {
   box-shadow: 2px 2px 2px 2px rgb(185, 187, 188);
 }
 
-.Issues {
+.Issues, .Improvements {
   width: 80%;
   padding: 10px;
   height: 150px;

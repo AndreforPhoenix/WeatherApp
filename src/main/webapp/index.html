@@ -44,10 +44,12 @@ Begin Date: 8/3/2024 7a
           custom domain and is setup for continuous deployment with Github as the repository source. 
         </p>
         <h2>About Dataset</h2>
-        <p>The source of the data that the application uses to generate graphical
-            infomation and statistics is produced and managed by the <a href="https://www.azmet.arizona.edu/">
-            The Arizona Meteorological Network (AZMET)</a>. The data is manually pulled from AZMET and then 
-            migrated over to the MySQL database on Azure. The database is updated with the most current
+        <p>The data used by the application to generate graphical
+            infomation and statistics comes from two sources. 1) <a href="https://www.azmet.arizona.edu/">
+            The Arizona Meteorological Network (AZMET)</a>  which is managed by the University of Arizona, and 2) <a href="https://www.ncei.noaa.gov/">
+            National Center for Environmental Information</a> which is managed by the National Oceanic and
+            Atmospheric Administration (NOAA).The data is manually pulled from AZMET and NOAA then 
+            migrated over to a MySQL database on Azure. The database is updated with the most current
             data every 24-48 hours.  
           </a>
         </p>
@@ -93,6 +95,7 @@ Begin Date: 8/3/2024 7a
         </div>
       </section>
 
+
       <section class="Issues">
         <h2>Application Issues</h2>
         <h4>Problem #1</h4> 
@@ -100,8 +103,12 @@ Begin Date: 8/3/2024 7a
           populate.</p>
         <h4>Cause:</h4> <span>Unknown</span>
         <h4>Fix (Short-term):</h4> <span>Reinitiating download by refreshing the page usually fixes the issue.</span>
- 
       </section>
+
+      <section class="Improvements">
+        <h2>Coding Improvements</h2>
+      </section>
+
 
       <footer class="footer">
         <div class="socialIcons">
