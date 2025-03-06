@@ -20,7 +20,7 @@ export async function getStation(station) {
       console.log("Creating station options...");
       mp.set(getStationName(b),b);
     }
-
+    
     const arr = mp.keys();
 
     for (const ar of arr){
@@ -33,9 +33,6 @@ export async function getStation(station) {
     } else {}
     }
 
- 
-
-  
     var cur = document.getElementById("progress").value;
     updateProgressBar(cur + 20);
   }

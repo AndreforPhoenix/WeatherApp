@@ -16,7 +16,6 @@ import { getResponse } from "./Response.js";
 
 var results = [];
 
-
 document
   .getElementById("getFileName")
   .addEventListener("click", function analyzeData() {
@@ -99,25 +98,20 @@ window.onload = function initform() {
 
   updateProgressBar(0);
 
-  setTimeout(() => {
-    getMonth("month");
-  }, 0);
+  getMonth("month");
+  getResponse("response");
 
   setTimeout(() => {
     getStation("station");
-  }, 0);
+  }, 2000);
 
   setTimeout(() => {
     getYear("year");
-  }, 0);
-
-  setTimeout(() => {
-    getResponse("response");
-  },0);
+  }, 4000);
 
   setTimeout(() => {
     getData();
-  }, 0);
+  }, 6000);
 };
 
 function removeChart() {
