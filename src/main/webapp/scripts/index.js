@@ -99,18 +99,10 @@ window.onload = function initform() {
 
   getMonth("month");
   getResponse("response");
-
-  setTimeout(() => {
-    getStation("station");
-  }, 2000);
-
-  setTimeout(() => {
-    getYear("year");
-  }, 4000);
-
-  setTimeout(() => {
-    getData();
-  }, 6000);
+  getStation("station");
+  getYear("year");
+  getData();
+ 
 };
 
 
