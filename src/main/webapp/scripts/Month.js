@@ -1,17 +1,19 @@
 import { updateProgressBar } from "./Update.js";
 
-export function getMonth(month) {
+export async function getMonth(month) {
+  const file = './config/monthConfig.txt';
+  const response = await fetch(file)
+  .then((data) => data.json());
+  
+  console.log(response)
  
-  const months = '["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov", "Dec"]'
-  const myArray = JSON.parse(months);
-
   var select4 = document.getElementById(month);
   
-  for (const y of myArray) {
+  for (const element of response) {
 
     var option4 = document.createElement("OPTION");
-    option4.text = y
-    option4.value = y;
+    option4.text = element
+    option4.value = element;
 
     select4.appendChild(option4);
 }

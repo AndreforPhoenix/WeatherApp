@@ -1,0 +1,10 @@
+{
+    "1":"Tucson",
+    "5":"Coolidge",
+    "12":"Greenway",
+    "15":"Encanto",
+    "22":"Queen Creek",
+    "23":"Harquahala",
+    "27":"Desert Ridge",
+    "99":"Sky Harbor"
+}

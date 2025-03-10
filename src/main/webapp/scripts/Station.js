@@ -1,38 +1,18 @@
 import { updateProgressBar } from "./Update.js";
-import { getStationName} from "./StationName.js";
 
-export async function getStation(station) {
-    const a = await fetch("https://azmetapp-cdfqh3f3azapewbf.canadacentral-01.azurewebsites.net/station", {
-      mode: "cors",
-      headers: {
-        'Content-Type': 'application/json; charset=utf-8',
-    },
-    }).then((data) => data.json());
-  
-    console.log("Get station promise resolved...");
-  
-    var select3 = document.getElementById(station);
+export async function getStation(station) {  
+ const file = './config/stationConfig.txt';
+ const response = await fetch(file)
+ .then((data) => data.json());
 
-    const sta = new Set();
-    const mp = new Map();
-  
-    for (const b of a) {
-      console.log("Creating station options...");
-      mp.set(getStationName(b),b);
-    }
-    
-    const arr = mp.keys();
+ var select3 = document.getElementById(station);
 
-    for (const ar of arr){
-    var option3 = document.createElement("OPTION");
-
-    if (!(ar === "")) {
-      option3.text = ar;
-      option3.value = mp.get(ar);
-    select3.appendChild(option3);
-    } else {}
-    }
-
+ for (let [key,values] of Object.entries(response)){
+  var option3 = document.createElement("OPTION");
+  option3.text = values;
+  option3.value = key;
+  select3.appendChild(option3);
+ }
     var cur = document.getElementById("progress").value;
     updateProgressBar(cur + 20);
-  }
+ }
