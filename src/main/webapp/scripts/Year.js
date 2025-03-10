@@ -9,17 +9,12 @@ export async function getYear(year) {
     },
     }).then((data) => data.json());
   
-    console.log("Get year promise resolved...");
-  
     var select2 = document.getElementById(year);
   
     const yr = new Set();
 
     for (const u of t) {
-  
-      console.log("Creating year options...");
       yr.add(u);
-    
     }
 
     const itr = yr.keys();

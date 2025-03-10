@@ -61,7 +61,6 @@ class Supplier {
 
       for (const s of stationKeys) {
         // n times
-        console.log(s);
         const q = nArray.filter((c) => c.station == s);
         for (const d of q) {
           // n times
@@ -75,7 +74,6 @@ class Supplier {
 
       for (const m of monthKeys) {
         // n times
-        console.log(m);
         const r = nArra.filter((e) => e.month == m);
         for (const g of r) {
           // n times

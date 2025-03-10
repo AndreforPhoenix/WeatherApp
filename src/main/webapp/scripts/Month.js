@@ -5,8 +5,6 @@ export async function getMonth(month) {
   const response = await fetch(file)
   .then((data) => data.json());
   
-  console.log(response)
- 
   var select4 = document.getElementById(month);
   
   for (const element of response) {

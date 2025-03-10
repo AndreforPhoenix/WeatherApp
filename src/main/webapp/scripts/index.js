@@ -20,7 +20,6 @@ document
   .getElementById("getFileName")
   .addEventListener("click", function analyzeData() {
     try {
-      console.log("Trying to remove sample chart,");
       document.getElementById("charts").removeChild(sample);
     } catch {}
 
@@ -114,9 +113,6 @@ window.onload = function initform() {
   }, 6000);
 };
 
-function removeChart() {
-  console.log("Remove attempted");
-  }
 
 async function getData() {
   results = await fetch("https://azmetapp-cdfqh3f3azapewbf.canadacentral-01.azurewebsites.net/data", {

@@ -159,7 +159,6 @@ class Boxplot {
             //this.gmax;
 
           var hOffset = this.gMedian - (this.frameH/2.5);            
-          console.log(this.gMedian, this.frameH, this.frameH/2, hOffset);
     
           //plot points
           for (let i = 0; i < temp.length; i++) {
@@ -299,7 +298,6 @@ class Boxplot {
         b.id = "b";
         b.className = "b";
         b.addEventListener("click", function removeChart(){
-          console.log("Removing...")
           document.getElementById("charts").removeChild(boxAll)
         })
         b.type = "button";
