@@ -2,19 +2,7 @@ function analyzeData() {
     try {
       canvas.remove();
     } catch {}
-  
-    //const myTarget = document.getElementById("charts");
-    //myTarget.innerHTML ='<canvas id="histogram"></canvas>'
-  
-    //  const myMarget = document.getElementById("charts");
-    //  myMarget.innerHTML =
-    //    '<canvas id="cummulative" width= 100% height ="480"></canvas>'
-  
-    //const cHeight = document.getElementById("histogram");
-    //const cH = cHeight.height;
-    //const cWidth = document.getElementById("histogram");
-    //const cW = cWidth.width;
-  
+    
     var filter1 = document.getElementById("response").value;
   
     var f = document.getElementById("year");
@@ -52,7 +40,7 @@ function analyzeData() {
   
     const filter5 = document.getElementById("by").value;
   
-    const q = new Supplier(
+    const dataSupplier = new Supplier(
       results,
       filter1,
       filter2,
@@ -62,7 +50,8 @@ function analyzeData() {
       540,
       300
     );  
-    const box = new Boxplot(q);
+  
+    new Boxplot(dataSupplier);
     //const hist = new Histogram(q);
     //const cumm = new Cummulative(q);
   }
