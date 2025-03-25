@@ -4,6 +4,7 @@ import { SummaryStats } from "./SummaryStats.js";
 import { getStationName } from "./StationName.js";
 import { Rectangle } from "./Rectangle.js";
 import { Point } from "./Point.js";
+import {Line} from "./Line.js";
 
 class Boxplot {
   cH;
@@ -132,10 +133,8 @@ class Boxplot {
 
         y = this.fHOffset * scale + hOffset;
 
-        drawWhiskers(paint,x,x,min,p25);
-        drawWhiskers(paint,x,x,max,p75);
-        drawWhiskers(paint,x-10,x+10,max,max);
-        drawWhiskers(paint,x-10,x+10,min,min);
+        //draw whiskers
+        drawWhiskers(paint,1.5, "black",x,y,scale,min,p25,p75,max);
 
         //Draw x-axis labels
         paint.font = "12px serif";
@@ -191,18 +190,11 @@ class Boxplot {
       console.error();
     }
 
-    function drawWhiskers(paint, xfrom, xto, yfrom, yto ){
-      paint.beginPath();
-      paint.moveTo(
-        xfrom,
-        y - scale * yfrom
-      );
-      paint.lineTo(
-        xto,
-        y - scale * yto
-      );
-      paint.stroke();
-      paint.closePath();
+    function drawWhiskers(paint, lineWidth, color, x,y, scale, min,p25,p75,max ){
+      new Line(paint,lineWidth,color,x,x,y,scale, min,p25)
+      new Line(paint,lineWidth,color,x,x,y,scale,max,p75)
+      new Line(paint,lineWidth,color,x-15,x+15,y,scale,min,min)
+      new Line(paint,lineWidth,color,x-15,x+15,y,scale,max,max)
     }
 
 
