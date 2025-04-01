@@ -193,8 +193,8 @@ class Boxplot {
     function drawWhiskers(paint, lineWidth, color, x,y, scale, min,p25,p75,max ){
       new Line(paint,lineWidth,color,x,x,y,scale, min,p25)
       new Line(paint,lineWidth,color,x,x,y,scale,max,p75)
-      new Line(paint,lineWidth,color,x-15,x+15,y,scale,min,min)
-      new Line(paint,lineWidth,color,x-15,x+15,y,scale,max,max)
+      new Line(paint,lineWidth,color,x-7,x+7,y,scale,min,min)
+      new Line(paint,lineWidth,color,x-7,x+7,y,scale,max,max)
     }
 
 
@@ -275,7 +275,7 @@ class Boxplot {
       let width = 0;
       if (byCatLength < 10) {
         width = 30;
-      } else if (byCatLength > 10 && byCatLength < 20) {
+      } else if (byCatLength >= 10 && byCatLength < 20) {
         width = 20;
       } else {
         width = 10;
@@ -329,7 +329,7 @@ class Boxplot {
         fWOffset + 10,
         fHOffset - 20
       );
-      paint.fillText("Year(s): " + selYears, fWOffset + 10, fHOffset);
+      //paint.fillText("Year(s): " + selYears, fWOffset + 10, fHOffset);
     }
 
     function drawTitle(paint, cId, f1, fWidth, fHeight, fHOffset, byCat) {
