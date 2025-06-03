@@ -13,6 +13,7 @@ import { getMonth } from "./Month.js";
 //import { getData } from "./Data.js";
 import { updateProgressBar } from "./Update.js";
 import { getResponse } from "./Response.js";
+import { LineChart } from "./LineChart.js";
 
 var results = [];
 
@@ -72,13 +73,62 @@ document
       filter4,
       filter5,
       1000,
-      300
+      300,
+      0.7,
+      0.7
     );
 
-    new Boxplot(q);
+  
+    const boxP = new Boxplot(q);
+    const d = boxP.getGraph1();
+    const y = boxP.getGraph2();
 
-    //const hist = new Histogram(q);
-    //const cumm = new Cummulative(q);
+    const maxLine = new LineChart(q,"Max");
+    const max = maxLine.getGraph();
+
+    const q3Line = new LineChart(q,"Q3");
+    const q3 = q3Line.getGraph();
+
+    const medLine = new LineChart(q,"Median");
+    const media = medLine.getGraph();
+
+    const q1Line = new LineChart(q,"Q1");
+    const q1 = q1Line.getGraph();
+
+    const minLine = new LineChart(q,"Min");
+    const min = minLine.getGraph();
+
+      const box = document.createElement("div");
+      box.id = "box";
+
+      const boxAll = document.createElement("div");
+      boxAll.id = "boxAll";
+
+      const boxside = document.createElement("div");
+      boxside.id = "boxside";
+
+      const z = document.createElement("button");
+      z.id = "z";
+      z.className = "z";
+      z.addEventListener("click", function removeChart() {
+        document.getElementById("charts").removeChild(boxAll);
+      });
+      z.type = "button";
+      z.textContent = "Remove";
+
+      document.getElementById("charts").appendChild(boxAll);
+      box.append(d);
+      box.append(y);
+      box.append(max);
+      box.append(q3);
+      box.append(media);
+      box.append(q1);
+      box.append(min);
+    
+      boxAll.append(box);
+      boxAll.append(boxside);
+      boxside.append(z);
+
   });
 
 

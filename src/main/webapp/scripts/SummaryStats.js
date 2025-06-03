@@ -2,7 +2,7 @@
 
 
 class SummaryStats {
-    max; p75th; median; p25th; min; range;
+    max; p75th; median; p25th; min; range; mean;
     
     constructor (resp) {
         this.max = Math.max(...resp);
@@ -11,6 +11,7 @@ class SummaryStats {
         this.p25th = this.set25thP(resp);
         this.min = Math.min(...resp);
         this.range = this.setRange();
+        this.mean = this.setMean(resp);
     }
 
 getMax(){
@@ -88,6 +89,18 @@ getMax(){
 
   getRange(){
     return this.range;
+  }
+
+  setMean(resp){
+    var sum = 0;
+    for (const num of resp){
+      sum = sum + num;
+    }
+    return sum/resp.length;
+  }
+
+  getMean(){
+    return this.mean;
   }
 
 }

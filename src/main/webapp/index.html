@@ -24,7 +24,7 @@ Begin Date: 8/3/2024 7a
     <div id="container" class="container">
       <header class="header">
 
-        <div>Data last refreshed: 5/21/2025 6:59pm </div>
+        <div>Data last refreshed: 6/1/2025 8:32pm </div>
         
         <a href="https://www.linkedin.com/in/andre-williams-625813120/">
           <img
@@ -91,7 +91,7 @@ Begin Date: 8/3/2024 7a
             <option value="1">month</option>
             <option value="2">station</option>
           </select>
-
+          
           <button type="button" class="getFileName" id="getFileName">
             Analyze Data
           </button>
@@ -106,11 +106,17 @@ Begin Date: 8/3/2024 7a
           populate.</p>
         <h4>Cause:</h4> <span>Unknown</span>
         <h4>Fix (Short-term):</h4> <span>Reinitiating download by refreshing the page usually fixes the issue.</span>
+        <h4>Reducing the number of http requests seems to have eliminated the problem.</h4>
       </section>
 
       <section class="Improvements">
         <h2>Code Improvements</h2>
         <ul>
+          <li>
+            6/2/2025, made changes to code to increase reusability
+          </li>
+          <li>6/2/2025, added new class enable linechart analysis. 
+          </li>
           <li>
             3/4/2025, eliminated HTTP request used to generate options for month. Eliminated 30+ lines of code. 
           </li>

@@ -2,10 +2,11 @@ class Point {
     constructor (paint,x,y,radius,angle, idx) {
 
         paint.beginPath();
+        paint.setLineDash([0,0]);
         paint.lineWidth = 0.75;
         paint.strokeStyle = "red";
         paint.arc(
-          x + Math.random() * ((-1) ** idx * 5),
+          x,
           y,
           radius,
           angle,

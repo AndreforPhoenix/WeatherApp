@@ -7,19 +7,16 @@ import { Point } from "./Point.js";
 import {Line} from "./Line.js";
 
 class Boxplot {
-  cH;
-  cW;
-  scW;
-  scH;
   selYears;
   selMonth;
   selStation;
   byCat;
+  graph1;
+  graph2;
   frameW;
   frameH;
   fWOffset;
   fHOffset;
-  cId;
   dArr;
   f1;
   by;
@@ -28,37 +25,32 @@ class Boxplot {
   gMedian;
 
   constructor(dataSupplier) {
-    this.cH = dataSupplier.cH;
-    this.cW = dataSupplier.cW;
-    this.scW = 0.7;
-    this.scH = 0.7;
+
     this.selYears = [...dataSupplier.yearsSet];
     this.selMonths = [...dataSupplier.monthSet];
     this.selStation = [...dataSupplier.stationSet];
     this.byCat = this.setByCat(dataSupplier.fbyCat);
-    this.frameW = this.setframeW(this.cW, this.scW);
-    this.frameH = this.setframeH(this.cH, this.scH);
-    this.fWOffset = this.setfWOffset(this.cW, this.scW);
-    this.fHOffset = this.setfHOffset(this.cH, this.scH);
-    this.cId = dataSupplier.canvasId3;
-    this.dArr = this.setArray(dataSupplier.dpColReduced);
+    this.frameW = this.setframeW(dataSupplier.cW, dataSupplier.scW);
+    this.frameH = this.setframeH(dataSupplier.cH, dataSupplier.scH);
+    this.fWOffset = this.setfWOffset(dataSupplier.cW, dataSupplier.scW);
+    this.fHOffset = this.setfHOffset(dataSupplier.cH, dataSupplier.scH);
+    this.dArr = this.setArray(dataSupplier.arrayOfObservationsFiltered);
     this.f1 = dataSupplier.fResponse;
     this.by = this.setBy(dataSupplier.fbyCat);
     this.gMax = this.setGlobalMax([3, 1]);
     this.gMin = this.setGlobalMin([3, 1]);
+    this.graph1 = this.setGraph1(dataSupplier.cW, dataSupplier.cH);
+    this.graph2 = this.setGraph2(dataSupplier.cW,125);
 
-    //Create canvas object
-    const canvas = board(this.cId, this.cW, this.cH);
-    const canvas2 = board("Summary", this.cW, 125);
 
-    const paint = canvas.getContext("2d");
-    const paint2 = canvas2.getContext("2d");
+    const paint = this.graph1.getContext("2d");
+    const paint2 = this.graph2.getContext("2d");
 
     paint.translate(0, this.frameH);
     paint2.translate(0, this.frameH);
 
     drawFrame(paint,paint2,this.fWOffset,this.fHOffset,this.frameW,this.frameH);
-    drawTitle(paint,this.cId,this.f1,this.frameW,this.frameH,this.fHOffset,this.by);
+    drawTitle(paint,"Boxplot",this.f1,this.frameW,this.frameH,this.fHOffset,this.by);
     drawSelectionLabels(paint,this.selYears,this.selMonths,this.fWOffset,this.fHOffset,this.selStation);
     drawFiveNLabels(paint2, this.fWOffset, this.frameW);
 
@@ -116,7 +108,7 @@ class Boxplot {
         width = boxWidth(this.byCat.length);
         height = -(p75 - p25) * scale;
 
-        new Rectangle(paint, x, y, width, height);
+        new Rectangle(paint, x, y, width, height,"yellow");
 
         //draw median
         x = xPos(this.fWOffset, this.frameW, this.byCat.length, j, "point");
@@ -134,11 +126,13 @@ class Boxplot {
         y = this.fHOffset * scale + hOffset;
 
         //draw whiskers
-        drawWhiskers(paint,1.5, "black",x,y,scale,min,p25,p75,max);
+        drawWhiskers(paint,1.5,0, "black",x,y,scale,min,p25,p75,max);
 
         //Draw x-axis labels
         paint.font = "12px serif";
         paint.fillStyle = "black";
+
+        var text = this.byCat[j];
 
         if (dataSupplier.fbyCat === "2") {
           paint.fillText(
@@ -151,7 +145,7 @@ class Boxplot {
           );
         } else {
           paint.fillText(
-            this.byCat[j],
+            text.slice(2,4),
             this.fWOffset +
               (j + 1) * (this.frameW / (this.byCat.length + 1)) -
               10,
@@ -162,39 +156,15 @@ class Boxplot {
         paint.stroke();
       }
 
-      const box = document.createElement("div");
-      box.id = "box";
-
-      const boxAll = document.createElement("div");
-      boxAll.id = "boxAll";
-
-      const boxside = document.createElement("div");
-      boxside.id = "boxside";
-
-      const b = document.createElement("button");
-      b.id = "b";
-      b.className = "b";
-      b.addEventListener("click", function removeChart() {
-        document.getElementById("charts").removeChild(boxAll);
-      });
-      b.type = "button";
-      b.textContent = "Remove";
-
-      document.getElementById("charts").appendChild(boxAll);
-      box.append(canvas);
-      box.append(canvas2);
-      boxAll.append(box);
-      boxAll.append(boxside);
-      boxside.append(b);
     } catch (e) {
       console.error();
     }
 
-    function drawWhiskers(paint, lineWidth, color, x,y, scale, min,p25,p75,max ){
-      new Line(paint,lineWidth,color,x,x,y,scale, min,p25)
-      new Line(paint,lineWidth,color,x,x,y,scale,max,p75)
-      new Line(paint,lineWidth,color,x-7,x+7,y,scale,min,min)
-      new Line(paint,lineWidth,color,x-7,x+7,y,scale,max,max)
+    function drawWhiskers(paint, lineWidth,dash, color, x,y, scale, min,p25,p75,max ){
+      new Line(paint,lineWidth,dash,color,x,x,y,scale, min,p25)
+      new Line(paint,lineWidth,dash,color,x,x,y,scale,max,p75)
+      new Line(paint,lineWidth,dash,color,x-7,x+7,y,scale,min,min)
+      new Line(paint,lineWidth,dash,color,x-7,x+7,y,scale,max,max)
     }
 
 
@@ -228,6 +198,7 @@ class Boxplot {
       } else {
         dec = 1;
       }
+
       paint2.fillText(stat.toFixed(dec), x, y, frameW);
     }
 
@@ -341,6 +312,28 @@ class Boxplot {
       );
     }
   }
+
+    setGraph1(width,height){
+     let a = document.createElement("canvas");
+     a.id = "Boxplot";
+     a.width = width;
+     a.height = height;
+     return a;
+  }
+    getGraph1(){
+      return this.graph1;
+    }
+
+    setGraph2(width,height){
+     let a = document.createElement("canvas");
+     a.id = "Summary";
+     a.width = width;
+     a.height = height;
+     return a;
+  }
+    getGraph2(){
+      return this.graph2;
+    }
 
   setGlobalMax(resp) {
     this.gMax = Math.max(...resp);
