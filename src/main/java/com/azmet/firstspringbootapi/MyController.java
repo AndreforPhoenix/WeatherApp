@@ -92,9 +92,10 @@ public class MyController {
             Double dAtmax = myData.rs.getDouble("atmaxDegF");
             Double dAtmin = myData.rs.getDouble("atminDegF");
             Double dAtmean = myData.rs.getDouble("atmeanDegF");
+            Double dPrecip = myData.rs.getDouble("preciptotal");
             String sDate = myData.rs.getString("date");
 
-            myResponse = new ResponseObject(sYear,sMonth,sStation,dAtmax,dAtmin,dAtmean,sDate);
+            myResponse = new ResponseObject(sYear,sMonth,sStation,dAtmax,dAtmin,dAtmean,dPrecip,sDate);
             data1.add(myResponse);
 
         }
