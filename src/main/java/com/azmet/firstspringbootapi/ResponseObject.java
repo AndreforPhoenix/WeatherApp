@@ -17,16 +17,18 @@ public class ResponseObject {
     private Double atmaxDegF;
     private Double atminDegF;
     private Double atmeanDegF;
+    private Double preciptotal;
     private String date;
 
 
-    public ResponseObject (String sYear, String sMonth, String sStation, Double dAtmaxDegF, Double dAtminDegF, Double dAtmeanDegF, String sDate) {
+    public ResponseObject (String sYear, String sMonth, String sStation, Double dAtmaxDegF, Double dAtminDegF, Double dAtmeanDegF, Double dPreciptotal, String sDate) {
         year = sYear;
         month = sMonth;
         station = sStation;
         atmaxDegF = dAtmaxDegF;
         atminDegF = dAtminDegF;
         atmeanDegF = dAtmeanDegF;
+        preciptotal = dPreciptotal;
         date = sDate;
     }
 
@@ -77,6 +79,14 @@ public class ResponseObject {
     public void setAtmeanDegF(Double atmeanDegF) {
         this.atmeanDegF = atmeanDegF;
     }
+
+    public Double getPreciptotal() {
+        return preciptotal;
+    }
+
+    public void setPreciptotal(Double preciptotal) {
+        this.preciptotal = preciptotal ;
+    }    
 
     public String getDate() {
         return date;
