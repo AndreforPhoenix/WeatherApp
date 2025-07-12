@@ -7,22 +7,8 @@ import { Point } from "./Point.js";
 import {Line} from "./Line.js";
 
 class Boxplot {
-  selYears;
-  selMonth;
-  selStation;
-  byCat;
-  graph1;
-  graph2;
-  frameW;
-  frameH;
-  fWOffset;
-  fHOffset;
-  dArr;
-  f1;
-  by;
-  gMax;
-  gMin;
-  gMedian;
+  selYears; selMonth; selStation; byCat; graph1; graph2; frameW;
+  frameH; fWOffset; fHOffset; dArr; f1; by; gMax; gMin; gMedian;
 
   constructor(dataSupplier) {
 
@@ -46,12 +32,12 @@ class Boxplot {
     const paint = this.graph1.getContext("2d");
     const paint2 = this.graph2.getContext("2d");
 
-    paint.translate(0, this.frameH);
+    ///paint.translate(0, this.frameH);
     paint2.translate(0, this.frameH);
 
     drawFrame(paint,paint2,this.fWOffset,this.fHOffset,this.frameW,this.frameH);
     drawTitle(paint,"Boxplot",this.f1,this.frameW,this.frameH,this.fHOffset,this.by);
-    drawSelectionLabels(paint,this.selYears,this.selMonths,this.fWOffset,this.fHOffset,this.selStation);
+    //drawSelectionLabels(paint,this.selYears,this.selMonths,this.fWOffset,this.fHOffset,this.selStation);
     drawFiveNLabels(paint2, this.fWOffset, this.frameW);
 
     try {
@@ -64,6 +50,8 @@ class Boxplot {
           var scr = "a.station";
         }
 
+        console.log(this.byCat.length);
+
         var tempA = this.dArr;
         var respA = [];
         for (let i = 0; i < tempA.length; i++) {
@@ -73,6 +61,9 @@ class Boxplot {
         this.setGlobalMedian(respA);
         this.setGlobalMax(respA);
         this.setGlobalMin(respA);
+        
+        const myStat = new SummaryStats(respA);
+        const avg = myStat.getMean();
 
         var temp = this.dArr.filter((a) => eval(scr) == this.byCat[j]);
         var resp = [];
@@ -94,26 +85,41 @@ class Boxplot {
         var min = fiveN.getMin();
 
         var x, y, width, height;
+
+          let xStart = (this.frameW/(this.byCat.length + 1)) + this.fWOffset;
+          let xStep =  this.frameW/(this.byCat.length + 1);
+          
+           x = xStart + xStep*(j);
+
+           var point; 
+           var deltaToMean;
         
        //plot points
         for (let i = 0; i < temp.length; i++) {
-          x = xPos(this.fWOffset, this.frameW, this.byCat.length, j, "point");
-          y = this.fHOffset * scale - temp[i][this.f1] * scale + hOffset;
-          new Point(paint, x, y, 1.5, 0, i);
+     
+               deltaToMean = temp[i][this.f1] - avg;
+               point = deltaToMean*3;
+
+          new Point(paint,x,(this.graph1.height/2)-point,2,0,i);
         }
 
         //draw IQR rectangle
-        x = xPos(this.fWOffset, this.frameW, this.byCat.length, j, "box");
-        y = this.fHOffset * scale - p25 * scale + hOffset;
+       
         width = boxWidth(this.byCat.length);
-        height = -(p75 - p25) * scale;
+        var p75DeltaToMean = (p75 - avg)*3;
+        var p25DeltaToMean = (p25 - avg)*3;
+        height = (p75DeltaToMean - p25DeltaToMean);
 
-        new Rectangle(paint, x, y, width, height,"yellow");
+          new Rectangle(paint, x - width/2, (this.graph1.height/2) - p75DeltaToMean, width, height,"yellow");
 
         //draw median
-        x = xPos(this.fWOffset, this.frameW, this.byCat.length, j, "point");
-        y = this.fHOffset * scale - med * scale + hOffset;
-        drawMedian(paint, x, y, this.byCat.length);
+  
+           var lineStart = x - boxWidth(this.byCat.length)/2;
+           var lineEnd = x + boxWidth(this.byCat.length)/2;
+
+        var medLine = (med - avg)*3;
+        
+        new Line(paint,2,0,"black",lineStart,lineEnd,this.graph1.height/2,1,medLine,medLine);
 
         //draw five number data
         drawFiveN(paint2, x, N, this.frameW);
@@ -126,7 +132,7 @@ class Boxplot {
         y = this.fHOffset * scale + hOffset;
 
         //draw whiskers
-        drawWhiskers(paint,1.5,0, "black",x,y,scale,min,p25,p75,max);
+        drawWhiskers(paint,1.5,0, "black",x,this.graph1.height/2,1,(min-avg)*3,(p25-avg)*3,(p75-avg)*3,(max-avg)*3);
 
         //Draw x-axis labels
         paint.font = "12px serif";
@@ -139,17 +145,15 @@ class Boxplot {
             getStationName(this.byCat[j]),
             this.fWOffset +
               (j + 1) * (this.frameW / (this.byCat.length + 1)) -
-              10,
-            this.fHOffset + 20,
+              20,
+            this.graph1.height - 20,
             30
           );
         } else {
           paint.fillText(
-            text.slice(2,4),
-            this.fWOffset +
-              (j + 1) * (this.frameW / (this.byCat.length + 1)) -
-              10,
-            this.fHOffset + 20,
+            text.slice(0,4),
+           x - 10,
+            this.graph1.height - 20,
             30
           );
         }
@@ -260,7 +264,7 @@ class Boxplot {
       paint2.font = "11px serif";
       paint2.textAlign = "center";
 
-      paint.rect(fWOffset, fHOffset, frameW, -frameH);
+      paint.rect(fWOffset, fHOffset, frameW, frameH);
       paint.lineWidth = 1;
       paint.stroke();
 
@@ -304,10 +308,14 @@ class Boxplot {
     }
 
     function drawTitle(paint, cId, f1, fWidth, fHeight, fHOffset, byCat) {
+
+        paint.font = "24px serif";
+        paint.fillStyle = "black";
+
       paint.fillText(
         "   " + cId + " for " + f1 + " by " + byCat,
         fWidth / 2,
-        -fHeight + fHOffset - 20,
+        fHeight / 6,
         fWidth
       );
     }

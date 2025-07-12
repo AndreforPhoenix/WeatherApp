@@ -2,7 +2,7 @@ import { updateProgressBar } from "./Update.js";
 
 export function getResponse(response) {
   
-    const responseOption = '["atmaxDegF","atminDegF","atmeanDegF"]';
+    const responseOption = '["atmaxDegF","atminDegF","atmeanDegF","preciptotal"]';
     const respArray = JSON.parse(responseOption);
 
     var select1 = document.getElementById(response);
